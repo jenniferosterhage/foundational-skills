@@ -1,7 +1,7 @@
 ---
 title: 'Data Sources badge'
 subtitle: "LASER Institute Foundation Learning Lab 1"
-author: "Jeanne McClure"
+author: "Jennifer Osterhage"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
 output: html_document
 ---
@@ -14,93 +14,99 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 
-To earn a badge for each lab, you are required to respond to a set of prompts for two parts: 
+To earn a badge for each lab, you are required to respond to a set of prompts for two parts:
 
 -   In Part I, you will reflect on your understanding of key concepts and begin to think about potential next steps for your own study.
 
 -   In Part II, you will create a simple data product in R that demonstrates your ability to apply a data analysis technique introduced in this learning lab.
 
 ### Part I: Reflect and Plan
+
 Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#articles)), [Google Scholar](https://scholar.google.com/) or search engine to locate a research article, presentation, or resource that applies learning analytics analysis to an educational context or topic of interest. More specifically, **locate a study that makes use of one of the data structures we learned today.** You are also welcome to select one of your research papers.
 
 1.  Provide an APA citation for your selected study.
 
-    -   
+    -   Cogliano, M., Bernacki, M. L., Hilpert, J. C., & Strong, C. L. (2022). A self-regulated learning analytics prediction-and-intervention design: Detecting and supporting struggling biology students. *Journal of Educational Psychology.* Advance online publication. [https://doi.org/10.1037/edu0000745](https://psycnet.apa.org/doi/10.1037/edu0000745)
 
 2.  What types of data are associated with LA ?
 
-    -   
-
+    -   Predictions of which students may struggle in the class based on two pieces of data 1. scores on a knowledge pre-test and 2. student interactions with the LMS
 
 3.  What type of data structures are analyzed in the educational context?
 
-    -   
+    -   They developed a prediction model comprising prior knowledge scores and learning management system log data of student activities during the first 2 weeks in the course
 
 4.  How might this article be used to better understand a dataset or educational context of personal or professional interest to you?
 
-    -   
+    -   I am interested in how learning strategy interventions change student behaviors and outcomes in biology. In my own study, I probably wouldn't do a prediction of which students are struggling, but I would use LA to see how student behaviors change after the intervention (i.e. more likely to engage with practice questions in the LMS, etc)
 
-5.  Finally, how do these processes compare with what teachers and educational organizations already do to support and assess student learning? 
+5.  Finally, how do these processes compare with what teachers and educational organizations already do to support and assess student learning?
 
-    -   
+    -   I'd like to measure student grade outcomes, which is what many educational studies do in this domain. However, my proposed study would use LA to investigate student behaviors after an intervention to add to an understanding of why interventions may or may not work to affect performance.
 
 Draft a research question of guided by techniques and data sources that you are potentially interested in exploring in more depth.
 
 1.  What data source(s) should be analyzed or discussed?
 
-    -   
+    -   After the study skills intervention, data should include tracking of interaction with study skills materials such as practice questions and practice exams. Student performance outcomes (i.e. exam scores) will also be measured
 
 2.  What is the purpose of your article?
 
-    -   
+    -   To examine whether a learning skill intervention changes student behaviors in the learning management system (LMS). For example, are students more likely to utilize practice questions and practice exams after the intervention? And are these behaviors associated with exam grades?
 
 3.  Explain the analytical level at which these data would need to be collected and analyzed.
 
     -   
 
-4.  How, if at all, will your article touch upon the application(s) of LA to “understand and improve learning and the contexts in which learning occurs?”
+4.  How, if at all, will your article touch upon the application(s) of LA to "understand and improve learning and the contexts in which learning occurs?"
 
-    -   
-
-
+    -   There are many research studies linking learning skill development interventions to student outcomes, but there is less literature about how these interventions change behaviors. These data are important to understand how learning occurs.
 
 ### Part II: Data Product
 
-After you finish the script file for [lab1_badge](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge) add the code fo reach problem into the correct code chunks below. # Making sure not to change the code chunk name.
-
+After you finish the script file for [lab1_badge](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge) add the code fo reach problem into the correct code chunks below. \# Making sure not to change the code chunk name.
 
 ```{r, problem_1}
 # YOUR FINAL CODE HERE
+Students <- c("Thor", "Rogue", "Electra", "Electra", "Wolverine")
+Foods <- c("Bread", "Orange", "Chololate", "Carrots", "Milk")
+
+df <- data.frame(Students, Foods)
+print(df)
 
 
 ```
-
 
 ```{r, problem_2}
 # YOUR FINAL CODE HERE
-
+table(Students)
 
 ```
-
 
 ```{r, problem_3}
 # YOUR FINAL CODE HERE
 
-
+vec <- c(1, 3, 5, 7, 10)
+sum(vec)
 ```
-
-
 
 ```{r, problem_4}
 # YOUR FINAL CODE HERE
 
+library(tidyverse)
 
+online_classes <- read_csv("data/sci-online-classes.csv")
+
+view(online_classes)
+
+#this is not a tibble. Its a datafroma
 ```
-
-
 
 ```{r, problem_5}
 # YOUR FINAL CODE HERE
+
+performance <- select(online_classes, -c("subject","section")) 
+view(performance)
 
 
 ```
@@ -111,13 +117,12 @@ Congratulations, you've completed your Data Sources Badge!
 
 *Complete the following steps to submit your work for review by:*
 
-1. Change the name of the author: in the [YAML header](https://monashdatafluency.github.io/r-rep-res/yaml-header.html) at the very top of this document to your name. As noted in [Reproducible Research in R](https://monashdatafluency.github.io/r-rep-res/index.html), The YAML header controls the style and feel for knitted document but doesn’t actually display in the final output.
+1.  Change the name of the author: in the [YAML header](https://monashdatafluency.github.io/r-rep-res/yaml-header.html) at the very top of this document to your name. As noted in [Reproducible Research in R](https://monashdatafluency.github.io/r-rep-res/index.html), The YAML header controls the style and feel for knitted document but doesn't actually display in the final output.
 
-2. Click the yarn icon above to “knit” your data product to a [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file that will be saved in your R Project folder.
+2.  Click the yarn icon above to "knit" your data product to a [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file that will be saved in your R Project folder.
 
-3. Commit your changes in GitHub Desktop and push them to your online GitHub repository.
+3.  Commit your changes in GitHub Desktop and push them to your online GitHub repository.
 
-4. Publish your HTML page the web using one of the following [publishing methods](https://rpubs.com/cathydatascience/518692):
-Publish on [RPubs](https://rpubs.com/) by clicking the “Publish” button located in the Viewer Pane when you knit your document. Note, you will need to quickly create a RPubs account. Publishing on GitHub using either [GitHub Pages](https://pages.github.com/) or the [HTML previewer](http://htmlpreview.github.io/).
+4.  Publish your HTML page the web using one of the following [publishing methods](https://rpubs.com/cathydatascience/518692): Publish on [RPubs](https://rpubs.com/) by clicking the "Publish" button located in the Viewer Pane when you knit your document. Note, you will need to quickly create a RPubs account. Publishing on GitHub using either [GitHub Pages](https://pages.github.com/) or the [HTML previewer](http://htmlpreview.github.io/).
 
-5. Post a new discussion on GitHub to our [Foundations Badges forum](https://github.com/orgs/laser-institute/teams/foundations/discussions/2). In your post, include a link to your published web page and `write` a short reflection highlighting one thing you learned from this lab and one thing you’d like to explore further.
+5.  Post a new discussion on GitHub to our [Foundations Badges forum](https://github.com/orgs/laser-institute/teams/foundations/discussions/2). In your post, include a link to your published web page and `write` a short reflection highlighting one thing you learned from this lab and one thing you'd like to explore further.

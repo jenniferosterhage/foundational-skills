@@ -9,9 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Jeanne McClure" />
+<meta name="author" content="Jennifer Osterhage" />
 
-<meta name="date" content="2022-07-11" />
+<meta name="date" content="2022-07-13" />
 
 <title>Data Sources badge</title>
 
@@ -365,8 +365,8 @@ pre code {
 
 <h1 class="title toc-ignore">Data Sources badge</h1>
 <h3 class="subtitle">LASER Institute Foundation Learning Lab 1</h3>
-<h4 class="author">Jeanne McClure</h4>
-<h4 class="date">July 11, 2022</h4>
+<h4 class="author">Jennifer Osterhage</h4>
+<h4 class="date">July 13, 2022</h4>
 
 </div>
 
@@ -396,27 +396,44 @@ welcome to select one of your research papers.</p>
 <ol style="list-style-type: decimal">
 <li><p>Provide an APA citation for your selected study.</p>
 <ul>
-<li></li>
+<li>Cogliano, M., Bernacki, M. L., Hilpert, J. C., &amp; Strong, C. L.
+(2022). A self-regulated learning analytics prediction-and-intervention
+design: Detecting and supporting struggling biology students.
+<em>Journal of Educational Psychology.</em> Advance online publication.
+<a href="https://psycnet.apa.org/doi/10.1037/edu0000745">https://doi.org/10.1037/edu0000745</a></li>
 </ul></li>
 <li><p>What types of data are associated with LA ?</p>
 <ul>
-<li></li>
+<li>Predictions of which students may struggle in the class based on two
+pieces of data 1. scores on a knowledge pre-test and 2. student
+interactions with the LMS</li>
 </ul></li>
 <li><p>What type of data structures are analyzed in the educational
 context?</p>
 <ul>
-<li></li>
+<li>They developed a prediction model comprising prior knowledge scores
+and learning management system log data of student activities during the
+first 2 weeks in the course</li>
 </ul></li>
 <li><p>How might this article be used to better understand a dataset or
 educational context of personal or professional interest to you?</p>
 <ul>
-<li></li>
+<li>I am interested in how learning strategy interventions change
+student behaviors and outcomes in biology. In my own study, I probably
+wouldn’t do a prediction of which students are struggling, but I would
+use LA to see how student behaviors change after the intervention
+(i.e. more likely to engage with practice questions in the LMS,
+etc)</li>
 </ul></li>
 <li><p>Finally, how do these processes compare with what teachers and
 educational organizations already do to support and assess student
 learning?</p>
 <ul>
-<li></li>
+<li>I’d like to measure student grade outcomes, which is what many
+educational studies do in this domain. However, my proposed study would
+use LA to investigate student behaviors after an intervention to add to
+an understanding of why interventions may or may not work to affect
+performance.</li>
 </ul></li>
 </ol>
 <p>Draft a research question of guided by techniques and data sources
@@ -424,11 +441,18 @@ that you are potentially interested in exploring in more depth.</p>
 <ol style="list-style-type: decimal">
 <li><p>What data source(s) should be analyzed or discussed?</p>
 <ul>
-<li></li>
+<li>After the study skills intervention, data should include tracking of
+interaction with study skills materials such as practice questions and
+practice exams. Student performance outcomes (i.e. exam scores) will
+also be measured</li>
 </ul></li>
 <li><p>What is the purpose of your article?</p>
 <ul>
-<li></li>
+<li>To examine whether a learning skill intervention changes student
+behaviors in the learning management system (LMS). For example, are
+students more likely to utilize practice questions and practice exams
+after the intervention? And are these behaviors associated with exam
+grades?</li>
 </ul></li>
 <li><p>Explain the analytical level at which these data would need to be
 collected and analyzed.</p>
@@ -439,7 +463,10 @@ collected and analyzed.</p>
 of LA to “understand and improve learning and the contexts in which
 learning occurs?”</p>
 <ul>
-<li></li>
+<li>There are many research studies linking learning skill development
+interventions to student outcomes, but there is less literature about
+how these interventions change behaviors. These data are important to
+understand how learning occurs.</li>
 </ul></li>
 </ol>
 </div>
@@ -448,11 +475,56 @@ learning occurs?”</p>
 <p>After you finish the script file for <a href="https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge">lab1_badge</a>
 add the code fo reach problem into the correct code chunks below. #
 Making sure not to change the code chunk name.</p>
-<pre class="r"><code># YOUR FINAL CODE HERE</code></pre>
-<pre class="r"><code># YOUR FINAL CODE HERE</code></pre>
-<pre class="r"><code># YOUR FINAL CODE HERE</code></pre>
-<pre class="r"><code># YOUR FINAL CODE HERE</code></pre>
-<pre class="r"><code># YOUR FINAL CODE HERE</code></pre>
+<pre class="r"><code># YOUR FINAL CODE HERE
+Students &lt;- c(&quot;Thor&quot;, &quot;Rogue&quot;, &quot;Electra&quot;, &quot;Electra&quot;, &quot;Wolverine&quot;)
+Foods &lt;- c(&quot;Bread&quot;, &quot;Orange&quot;, &quot;Chololate&quot;, &quot;Carrots&quot;, &quot;Milk&quot;)
+
+df &lt;- data.frame(Students, Foods)
+print(df)</code></pre>
+<pre><code>##    Students     Foods
+## 1      Thor     Bread
+## 2     Rogue    Orange
+## 3   Electra Chololate
+## 4   Electra   Carrots
+## 5 Wolverine      Milk</code></pre>
+<pre class="r"><code># YOUR FINAL CODE HERE
+table(Students)</code></pre>
+<pre><code>## Students
+##   Electra     Rogue      Thor Wolverine 
+##         2         1         1         1</code></pre>
+<pre class="r"><code># YOUR FINAL CODE HERE
+
+vec &lt;- c(1, 3, 5, 7, 10)
+sum(vec)</code></pre>
+<pre><code>## [1] 26</code></pre>
+<pre class="r"><code># YOUR FINAL CODE HERE
+
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+## ✔ tibble  3.1.7     ✔ dplyr   1.0.9
+## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+## ✔ readr   2.1.2     ✔ forcats 0.5.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>online_classes &lt;- read_csv(&quot;data/sci-online-classes.csv&quot;)</code></pre>
+<pre><code>## Rows: 603 Columns: 30</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (6): course_id, subject, semester, section, Gradebook_Item, Gender
+## dbl (23): student_id, total_points_possible, total_points_earned, percentage...
+## lgl  (1): Grade_Category
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>view(online_classes)
+
+#this is not a tibble. Its a datafroma</code></pre>
+<pre class="r"><code># YOUR FINAL CODE HERE
+
+performance &lt;- select(online_classes, -c(&quot;subject&quot;,&quot;section&quot;)) 
+view(performance)</code></pre>
 </div>
 <div id="knit-submit" class="section level3">
 <h3>Knit &amp; Submit</h3>

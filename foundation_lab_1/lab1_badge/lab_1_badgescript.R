@@ -1,6 +1,6 @@
 # Lab 1 Badge Code
 
-# Type your name here:
+# Jennifer Osterhage
 
 
 ################
@@ -14,8 +14,11 @@
 
 
 #### Write your code below:
+Students <- c("Thor", "Rogue", "Electra", "Electra", "Wolverine")
+Foods <- c("Bread", "Orange", "Chololate", "Carrots", "Milk")
 
-
+df <- data.frame(Students, Foods)
+print(df)
 
 
 ################
@@ -24,7 +27,7 @@
 
 # Using the data frame created in Problem 2, use the table() command to create a frequency table for the column called "Students".
 
-
+table(Students)
 
 
 ################
@@ -36,7 +39,8 @@
 
 #### Write your code below:
 
-
+vec <- c(1, 3, 5, 7, 10)
+sum(vec)
 
 
 ################
@@ -52,7 +56,11 @@
 
 #### Write your code below:
 
+library(tidyverse)
 
+online_classes <- read_csv("data/sci-online-classes.csv")
+
+view(online_classes)
 
 
 
@@ -70,6 +78,9 @@
 
 
 #### Write your code below:
+
+performance <- select(online_classes, -c("subject","section")) 
+view(performance)
 
 
 
